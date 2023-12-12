@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import csv
 
+# Name transform map, to keep consistent names with the provided training data
 name_map = {
     'Manchester City': 'Man City',
     'Arsenal': 'Arsenal',
@@ -78,6 +79,8 @@ def scrape_premier_league_teams(years):
             else:
                 print("Failed to retrieve the page.")
 
-# Call the function to start scraping team data
-years = [('240016', 2024), ('230054', 2023), ('220069', 2022), ('210064', 2021), ('200061', 2020), ('190075', 2019), ('180084', 2018), ('170099', 2017), ('160058', 2016), ('150059', 2015), ('140052', 2014), ('130034', 2013)]
-scrape_premier_league_teams(years)
+
+if __name__=='__main__':
+    # Call the function to start scraping team data
+    years = [('240016', 2024), ('230054', 2023), ('220069', 2022), ('210064', 2021), ('200061', 2020), ('190075', 2019), ('180084', 2018), ('170099', 2017), ('160058', 2016), ('150059', 2015), ('140052', 2014), ('130034', 2013)]
+    scrape_premier_league_teams(years)
